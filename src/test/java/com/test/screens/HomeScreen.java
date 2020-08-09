@@ -10,10 +10,10 @@ public class HomeScreen extends BaseScreen {
 	@AndroidFindBy(id = "com.amazon.mShop.android.shopping:id/rs_search_src_text")
 	private AndroidElement searchBox;
 
-	@AndroidFindBy(xpath = "com.amazon.mShop.android.shopping:id/rs_search_src_text")
+	@AndroidFindBy(xpath = "/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.support.v4.widget.DrawerLayout/android.widget.RelativeLayout/android.widget.RelativeLayout[2]/android.widget.RelativeLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.LinearLayout[2]/android.widget.ViewAnimator/android.widget.LinearLayout/android.widget.ListView/android.widget.LinearLayout")
 	private List<AndroidElement> searchResultsSuggestion;
 
-	@AndroidFindBy(xpath = "")
+	@AndroidFindBy(xpath = "//android.widget.ListView/*")
 	private List<AndroidElement> searchResult;
 
 	public void searchProduct(String searchString) {
@@ -33,7 +33,7 @@ public class HomeScreen extends BaseScreen {
 		// search product
 		searchProduct(searchString);
 		// select first suggested product from list
-		getSearchResultsSuggestion().get(0).click();
+		getSearchResultsSuggestion().get(2).click();
 	}
 	
 	

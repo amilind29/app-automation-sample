@@ -25,20 +25,20 @@ public class SearchProductStep {
 
 	@And("I select a result from suggestion")
 	public void i_select_product_from_search_suggestion() {
-		homeScreen.getSearchResultsSuggestion().get(0).click();
+		homeScreen.getSearchResultsSuggestion().get(1).click();
 	}
 
 	@Then("I should see search result")
 	public void i_see_search_result() {
 		List<AndroidElement> product_list = homeScreen.getSearchResult();
-		assertNotEquals(product_list.size(), 0);
+		assertNotEquals(product_list.size(), 1);
 	}
 
 	@When("I open random product")
 	public void i_open_random_product() {
 		Utils.randomSwipe(Utils.getRandomNumber(5));
 		List<AndroidElement> product_list = homeScreen.getSearchResult();
-		product_list.get(0).click();
+		product_list.get(1).click();
 		
 	}
 
