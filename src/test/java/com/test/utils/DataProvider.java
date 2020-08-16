@@ -18,7 +18,7 @@ public class DataProvider {
 	public static String TEXT_FILE="TEXT";
 
 	
-	public <T extends BaseModel> T readJsonDataToModel(File file, String file_type, Class<T> type) {
+	public static <T extends BaseModel> T readJsonDataToModel(File file, String file_type, Class<T> type) {
 		try {
 			BufferedReader reader = new BufferedReader(new FileReader(file));
 			Gson gson = new Gson();
@@ -29,7 +29,7 @@ public class DataProvider {
 		return  null;
 	}
 	
-	public String readTextContent(String file_path) {
+	public static String readTextContent(String file_path) {
 		try {
 			return new String(Files.readAllBytes(Paths.get(file_path)));
 		} catch (IOException e) {
